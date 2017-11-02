@@ -34,7 +34,26 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_food/:id", { :controller => "foods", :action => "destroy_row" })
+  
+  #------------------------------
 
+  # Routes for the Food resource:
+
+  # CREATE
+  get("/lists/new", { :controller => "lists", :action => "new_form" })
+  get("/create_list", { :controller => "lists", :action => "create_row" })
+
+  # READ
+  get("/lists", { :controller => "lists", :action => "index" })
+  get("/lists/:id", { :controller => "lists", :action => "show" })
+
+  # UPDATE
+  get("/lists/:id/edit", { :controller => "lists", :action => "edit_form" })
+  get("/update_list/:id", { :controller => "lists", :action => "update_row" })
+
+  # DELETE
+  get("/delete_list/:id", { :controller => "lists", :action => "destroy_row" })
+  
   #------------------------------
 
   get("/", { :controller => "coffee_beans", :action => "index" })
